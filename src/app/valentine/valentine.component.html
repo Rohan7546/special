@@ -1,0 +1,19 @@
+<div class="container-valentine">
+    <h1>To My Dear Dum Aloo 💕</h1>
+    <div class="highlight-container">
+        <img *ngIf="countYes" class="valentine-image" src="../../assets/image{{7}}.gif" alt="valentine-image">
+        <img *ngIf="countNo < 6" class="valentine-image" src="../../assets/image{{countNo + 1}}.gif" alt="valentine-image">
+        <img *ngIf="countNo === 6 && !countYes" class="valentine-image" src="../../assets/image{{countNo + 2}}.gif" alt="valentine-image">
+    </div>
+    <div class="description">
+        <span *ngIf="!countNo && !countYes">❤️❤️❤️❤️❤️❤️❤️❤️❤️❤️❤️❤️❤️</span>
+        <span *ngIf="countNo && !countYes">😭😭😭😭😭😭😭😭😭😭😭😭😭</span>
+    </div>
+    <div class="action" *ngIf="!countYes && countNo!==6">
+        <button class="valentine-yes-button valentine-yes-{{countNo}}" (click)="saidYes()">YES</button>
+        <button class="valentine-no-button valentine-no-{{countNo}}" (click)="saidNo()">{{valentineQues[countNo]}}</button>
+    </div>
+    <span *ngIf="countYes" class="hearts">
+        <h1>Thank You 😁😘😍💕</h1>
+    </span>
+</div>
